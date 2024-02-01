@@ -27,7 +27,7 @@
     "slug": {
       "type": "string"
     },
-    "reviews": {
+    "review": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::review.review",

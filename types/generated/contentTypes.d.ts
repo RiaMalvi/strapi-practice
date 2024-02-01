@@ -379,7 +379,7 @@ export interface ApiFilmFilm extends Schema.CollectionType {
     director: Attribute.String;
     plot: Attribute.Text;
     slug: Attribute.String;
-    reviews: Attribute.Relation<
+    review: Attribute.Relation<
       'api::film.film',
       'oneToMany',
       'api::review.review'
@@ -400,6 +400,7 @@ export interface ApiReviewReview extends Schema.CollectionType {
     singularName: 'review';
     pluralName: 'reviews';
     displayName: 'Review';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -746,7 +747,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -775,6 +775,8 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    phone: Attribute.String;
+    name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
