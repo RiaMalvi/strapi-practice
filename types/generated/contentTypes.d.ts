@@ -375,15 +375,14 @@ export interface ApiFilmFilm extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
-    released: Attribute.Date;
     director: Attribute.String;
     plot: Attribute.Text;
-    slug: Attribute.String;
     review: Attribute.Relation<
       'api::film.film',
       'oneToMany',
       'api::review.review'
     >;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
